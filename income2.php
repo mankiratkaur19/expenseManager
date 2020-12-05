@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $name = $_SESSION['name'];
+?>
+
 <!DOCTYPE php>
 <php lang="en">
 
@@ -122,9 +127,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav  nav nav-tabs">
-                    <li class="active">
-                        <a href="home.php"></a>
-                    </li>
+                    
                     <li><a href="income1.php"> Add Income</a></li>
                     <li><a href="expense1.php">Add Expense</a></li>
                     <li><a href="income2.php">View Income</a></li>
@@ -132,7 +135,7 @@
                     <li><a href="report.php">View Report</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
         </div>     
@@ -151,7 +154,7 @@
                 <h3>Income details </h3>
                 <p>
                     <section>
-                        <h6>Hello User!!</h6>
+                        <h6>Hello <?php echo $name;?></h6>
                         <!-- TABLE CONSTRUCTION-->
                         <table>
                             <tr>
@@ -164,20 +167,14 @@
                                
                              
                        
-                               $servername = "localhost";
-                               $username = "username";
-                               $password = "password";
-                               $dbname = "expense manager";
-                               $conn=mysqli_connect('localhost','root',' ');
-                               if (!$conn) {
-                                   die("Connection failed: " . mysqli_connect_error());
-                                }
-                                echo "Connected successfully";
-                                
+                              include("connection.php");
+                               
                                  
-                                mysqli_select_db("expense manager", $conn);
+                            
 
-                                $result = mysqli_query("SELECT * FROM income");
+                              $result = mysqli_query($conn,"SELECT * FROM income");
+
+                             
 
                                while($rows=$result->fetch_assoc()) 
                                 { 
@@ -193,6 +190,8 @@
                                 </td>
                                 
                             </tr>
+                           
+                            
                             <?php 
                                 } 
                              ?>

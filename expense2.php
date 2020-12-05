@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $name = $_SESSION['name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,10 +125,12 @@
                 </h2>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav nav nav-tabs">
-                    <li class="active">
-                        <a href="home.php"></a>
-                    </li>
+                <ul class="nav navbar-nav nav nav-tabs" style="
+    margin-left: 110px;
+    font-size: 20px;
+    margin-top: 20px;
+">> 
+                   
                     <li><a href="income1.php"> Add Income</a></li>
                     <li><a href="expense1.php">Add Expense</a></li>
                     <li><a href="income2.php">View Income</a></li>
@@ -132,7 +138,7 @@
                     <li><a href="report.php">View Report</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -151,7 +157,9 @@
                 <h3>Income details </h3>
                 <p>
                     <section>
-                        <h6>Hello User!!</h6>
+                        <h6>Hello
+                        <?php echo $name;?>
+                        </h6>
                         <!-- TABLE CONSTRUCTION-->
                         <table>
                             <tr>
@@ -162,19 +170,11 @@
                             <!-- PHP CODE TO FETCH DATA FROM ROWS-->
                             <?php   // LOOP TILL END OF DATA  
                                
-                               $servername = "localhost";
-                               $username = "username";
-                               $password = "password";
-                               $dbname = "expense manager";
-                               $conn=mysqli_connect('localhost','root',' ');
-                               if (!$conn) {
-                                   die("Connection failed: " . mysqli_connect_error());
-                                }
-                                echo "Connected successfully";
+                               include("connection.php");
+                              
                                 
-                                mysqli_select_db("expense manager", $conn);
 
-                                $result = mysqli_query("SELECT * FROM expense");
+                                $result = mysqli_query($conn,"SELECT * FROM expense");
 
                                while($rows=$result->fetch_assoc()) 
                                 { 
@@ -203,21 +203,19 @@
                         <img src="img1.jpg">
                     </p>
                 </div>
-                <div class="well">
-
-                    <h5>Features</h5>
-                    <p>1. Helps to keep track of your savings.</p>
-
-                    <p>2. Easy to maintain records.</p>
-                </div>
+               
             </div>
         </div>
     </div>
 
-    <footer class="container-fluid text-center">
-        <p>Footer Text</p>
+    <footer class="container-fluid text-center navbar-inverse" style="
+    height: 10vh;
+">
+        <p style="
+    font-size: 25px;
+    margin-top: 8px;
+">Copyright © 2020 | All Rights Reserved | Developed by Mankirat Kaur</p>
     </footer>
-
 </body>
 
 </html>

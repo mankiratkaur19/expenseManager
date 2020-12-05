@@ -90,7 +90,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav  nav nav-tabs">
-                    <li class="active"><a href="home.php">Home</a></li>
+                 
                     <li><a href="income1.php"> Add Income</a></li>
                     <li><a href="expense1.php">Add Expense</a></li>
                     <li><a href="income2.php">View Income</a></li>
@@ -98,7 +98,7 @@
                     <li><a href="report.php">View Report</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -116,36 +116,31 @@
                 <hr>
                 <h3>Enter your details </h3>
                 <p>
-                    <form action="/action_page.php">
+                    <form method="POST">
                         <div class="form-group">
                             <label for="income">Source of income:</label>
-                            <input type="text" class="form-control" id="income">
+                            <input type="text" class="form-control" id="income" name="income">
                         </div>
                         <div class="form-group">
                             <label for="amount">Add amount:</label>
-                            <input type="number" class="form-control" id="amount">
+                            <input type="number" class="form-control" id="amount" name="amount">
                         </div>
 
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <input type="submit" class="btn btn-default" name="submit">
                     </form>
 
                     <?php
                        include('connection.php');
                      
-                       if (!$conn) {
-                           die("Connection failed: " . mysqli_connect_error());
-                        }
-                        else
-                        echo "Connected successfully";
-                        
+                       
                        
                        if(isset($_POST['submit']))
                        {
                            $income=$_POST['income'];
                            $iamount=$_POST['amount'];
                                                       
-                           $query="insert into income(income,iamount) values('$income','$iamount')";
-                           $ins=mysqli_query($con,$query);
+                           $query=" INSERT INTO `income` values(NULL,'$income','$iamount')";
+                           $ins=mysqli_query($conn,$query);
                            if($ins)
                            {
                                echo "inserted";

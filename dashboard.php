@@ -100,10 +100,20 @@ session_start();
                 </h2>
             </div>
             <div class="navbar-custom" id="myNavbar">
-               
+            <ul class="nav navbar-nav  nav nav-tabs">
+                             
+                    <li><a href="income1.php"> Add Income</a></li>
+                    <li><a href="expense1.php">Add Expense</a></li>
+                    <li><a href="income2.php">View Income</a></li>
+                    <li><a href="expense2.php">View Expense</a></li>
+                    <li><a href="report.php">View Report</a></li>
+                </ul>
+
+            
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
-                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -118,9 +128,6 @@ session_start();
                             <li class="text-center">
                                 <img src="find_user.png" class="user-image img-responsive">
                             </li>
-
-
-
 
                         </ul>
                         <!--   </ul>-->

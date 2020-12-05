@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    $name = $_SESSION['name'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,9 +114,9 @@
     </style>
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
 
-    <nav class="navbar navbar-inverse">
+    <!-- <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -126,9 +130,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav nav nav-tabs">
-                    <li class="active">
-                        <a href="home.php"></a>
-                    </li>
+                    
                     <li><a href="income1.php"> Add Income</a></li>
                     <li><a href="expense1.php">Add Expense</a></li>
                     <li><a href="income2.php">View Income</a></li>
@@ -136,78 +138,84 @@
                     <li><a href="report.php">View Report</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="home.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
                 </ul>
             </div>
         </div>
 
-    </nav>
-
-    <div class="container-fluid text-center">
+    </nav> -->
+    <?php include("./include/header.php") ?>
+    <div class="container-fluid text-center" style="height: 75vh;">
         <div class="row content">
             <div class="col-sm-2 sidenav">
-                <img src="find_user.png"> </div>
+                <img src="find_user.png"> 
+                <h5 style="color: black;">Hello <?php
+                        echo "$name";?>
+                        </h5></div>
 
             <div class="col-sm-8 text-left">
-                <h1>Welcome to Daily Expense Manager</h1>
-
+               
                 <hr>
-                <h3>VIEW REPORT </h3>
+               <div style="text-align: center;"> <h2 style="color:#444; align-content:center; size:20px">VIEW REPORT </h2></div>
+               <br>
+               <br>
                 <p>
-                    <section>
-                        <h6>Hello User!!</h6>
+                   <div style="text-align: center; margin:auto">
+                   <section>
+                        
                         <!-- TABLE CONSTRUCTION-->
                         <table>
                             <tr>
-                                <th>Source of Income </th>
-                                <th>Amount</th>
-                                <th>Expense Description </th>
+                                <th>Category</th>
+                                <th>Source</th>
                                 <th>Amount</th>
 
                             </tr>
                             <!-- PHP CODE TO FETCH DATA FROM ROWS-->
                             <?php   // LOOP TILL END OF DATA  
 
-                            $servername = "localhost";
-                            $username = "username";
-                           
-                            $dbname = "expense manager";
-                            $conn = mysqli_connect('localhost', 'root', ' ');
-                            if (!$conn) {
-                                die("Connection failed: " . mysqli_connect_error());
-                            }
-                            echo "Connected successfully";
+                            include('connection.php');
+                            $result = mysqli_query($conn,"SELECT * FROM `income`");
+                            $result_expense = mysqli_query($conn,"SELECT * FROM `expense`");
 
-                            mysqli_select_db("expense manager", $conn);
-
-                            $result = mysqli_query("SELECT * FROM income && expense");
-
-
-                            while ($rows = $result->fetch_assoc()) {
+                            while ($rows = $result->fetch_assoc()){
                             ?>
                                 <tr>
                                     <!--FETCHING DATA FROM EACH  
                                     ROW OF EVERY COLUMN-->
+                                    <td>
+                                        Income
+                                    </td>
                                     <td>
                                         <?php echo $rows['income']; ?>
                                     </td>
                                     <td>
                                         <?php echo $rows['iamount']; ?>
                                     </td>
+                                </tr>
+                            <?php
+                            }
+                            while ($rows = $result_expense->fetch_assoc()){
+                            ?>
+                                <tr>
+                                    <td>
+                                        Expense
+                                    </td>
+                                    <!--FETCHING DATA FROM EACH  
+                                    ROW OF EVERY COLUMN-->
                                     <td>
                                         <?php echo $rows['expense']; ?>
                                     </td>
                                     <td>
                                         <?php echo $rows['eamount']; ?>
                                     </td>
-
-
                                 </tr>
                             <?php
                             }
                             ?>
                         </table>
                     </section>
+                   </div>
                 </p>
             </div>
             <div class="col-sm-2 sidenav">
@@ -216,19 +224,18 @@
                         <img src="img1.jpg">
                     </p>
                 </div>
-                <div class="well">
-
-                    <h5>Features</h5>
-                    <p>1. Helps to keep track of your savings.</p>
-
-                    <p>2. Easy to maintain records.</p>
-                </div>
+              
             </div>
         </div>
     </div>
 
-    <footer class="container-fluid text-center">
-        <p>Footer Text</p>
+    <footer class="container-fluid text-center navbar-inverse" style="
+    height: 10vh;
+">
+        <p style="
+    font-size: 25px;
+    margin-top: 8px;
+">Copyright © 2020 | All Rights Reserved | Developed by Mankirat Kaur</p>
     </footer>
 
 </body>

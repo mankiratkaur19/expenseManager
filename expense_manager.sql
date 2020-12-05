@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2020 at 02:14 PM
+-- Generation Time: Dec 05, 2020 at 12:19 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -34,6 +34,13 @@ CREATE TABLE `expense` (
   `eamount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `expense`
+--
+
+INSERT INTO `expense` (`Sn2`, `expense`, `eamount`) VALUES
+(1, 'Shopping', 20000);
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +53,26 @@ CREATE TABLE `income` (
   `iamount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `income`
+--
+
+INSERT INTO `income` (`Sn1`, `income`, `iamount`) VALUES
+(1, 'Salary', 45556);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mankirat-7048999414`
+--
+
+CREATE TABLE `mankirat-7048999414` (
+  `Trans Id` int(11) NOT NULL,
+  `Category` varchar(10) NOT NULL,
+  `Mode` varchar(20) NOT NULL,
+  `Amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
 
 --
@@ -54,8 +81,8 @@ CREATE TABLE `income` (
 
 CREATE TABLE `registration` (
   `Id` int(255) NOT NULL,
-  `name` text NOT NULL,
-  `contact` int(20) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `contact` varchar(20) NOT NULL,
   `email` varchar(150) NOT NULL,
   `password` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -65,7 +92,7 @@ CREATE TABLE `registration` (
 --
 
 INSERT INTO `registration` (`Id`, `name`, `contact`, `email`, `password`) VALUES
-(1, 'abc', 986953689, 'abc@gmail.com', 'abc1');
+(2, 'Mankirat', '7048999414', 'mankiratkaur1906@gmail.com', '123456');
 
 --
 -- Indexes for dumped tables
@@ -84,10 +111,38 @@ ALTER TABLE `income`
   ADD PRIMARY KEY (`Sn1`);
 
 --
+-- Indexes for table `mankirat-7048999414`
+--
+ALTER TABLE `mankirat-7048999414`
+  ADD PRIMARY KEY (`Trans Id`);
+
+--
 -- Indexes for table `registration`
 --
 ALTER TABLE `registration`
   ADD PRIMARY KEY (`Id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `income`
+--
+ALTER TABLE `income`
+  MODIFY `Sn1` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `mankirat-7048999414`
+--
+ALTER TABLE `mankirat-7048999414`
+  MODIFY `Trans Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

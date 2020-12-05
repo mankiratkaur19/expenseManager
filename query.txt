@@ -1,0 +1,2 @@
+CREATE TABLE `expense manager`.`mankirat-7048999414` ( `Trans Id` INT NOT NULL AUTO_INCREMENT , `Category` VARCHAR(10) NOT NULL , `Mode` VARCHAR(20) NOT NULL , `Amount` INT NOT NULL , PRIMARY KEY (`Trans Id`)) ENGINE = InnoDB;
+

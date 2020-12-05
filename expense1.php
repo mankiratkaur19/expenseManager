@@ -95,7 +95,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav  nav nav-tabs">
-                    <li class="active"><a href="home.php">Home</a></li>
+                   
                     <li><a href="income1.php"> Add Income</a></li>
                     <li><a href="expense1.php">Add Expense</a></li>
                     <li><a href="income2.php">View Income</a></li>
@@ -103,7 +103,7 @@
                     <li><a href="report.php">View Report</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right ">
-                    <li><a href="home.php"><span class="glyphicon glyphicon-log-in "></span> Login</a></li>
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-in "></span> Logout</a></li>
                 </ul>
             </div>
         </div>

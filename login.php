@@ -25,7 +25,7 @@ session_start();
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 
     .row.content {
-        height: 620px;
+        height: 450px
     }
 
     /* Set gray background color and 100% height */
@@ -100,10 +100,10 @@ session_start();
                 </h2>
             </div>
             <div class="navbar-custom" id="myNavbar">
+                <ul class="nav navbar-nav">
                
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="register.php"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
-                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                
                 </ul>
             </div>
         </div>
@@ -130,7 +130,7 @@ session_start();
                 </nav>
             </div>
             <div class="col-sm-8 text-left">
-                <h1 style="color: green;"> Welcome to Daily Expense Manager</h1>
+                <h1>Welcome to Daily Expense Manager</h1>
                 <p>Daily Expense Tracker System is a system which will keep a track of Income-Expense of a House-Wife on
                     a day to day basics, This System takes Income from House-Wife and divides in daily expense allowed,
                     If u exceed that days expense it
@@ -139,33 +139,48 @@ session_start();
                     month to show Income-Expense Curve. It
                     will let you add the savings amt which you had saved for some particular Festivals or day like
                     Birthday or Anniversary.</p>
-                <br>
-                <h3 style="color:blue; size:18px"> Features </h3>
-                <p style="size: 10px;">
+                <hr>
+                <h3>Enter your details </h3>
+                <p>
+                    <form action="login verify.php" method="post">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                       
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd" name="password">
+                        </div>
+                        <div class="checkbox">
+                            <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="submit" name="submit">
+
+                    </form>
+                    <p>Don't have an account?? <a href="register.php">Register here</a></p>
                    
-             
-•	Create multiple accounts/budget <br>
-•	Delete account<br>
-•	Background color<br>
-•	Modify Transactions<br>
-•	Offline datastore<br>
-•	Passcode security<br>
-•	Fully customizable categories<br>
 
                 </p>
             </div>
-            <div class="col-sm-2 sidenav" >
+            <div class="col-sm-2 sidenav">
                 <div class="well">
                     <p>
                         <img src="img1.jpg">
                     </p>
                 </div>
-               
+                <div class="well">
+
+                    <h5>Features</h5>
+                    <p>1. Helps to keep track of your savings.</p>
+
+                    <p>2. Easy to maintain records.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <footer style="size: 10vh;" class="container-fluid text-center">
+    <footer class="container-fluid text-center">
         <p>THANK YOU FOR VISITING THE SITE!! </p>
     </footer>
 
