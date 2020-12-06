@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2020 at 12:19 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Dec 06, 2020 at 12:05 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,53 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `expense`
+-- Table structure for table `kush-9354752373`
 --
 
-CREATE TABLE `expense` (
-  `Sn2` int(11) NOT NULL,
-  `expense` text NOT NULL,
-  `eamount` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `expense`
---
-
-INSERT INTO `expense` (`Sn2`, `expense`, `eamount`) VALUES
-(1, 'Shopping', 20000);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `income`
---
-
-CREATE TABLE `income` (
-  `Sn1` int(11) NOT NULL,
-  `income` text NOT NULL,
-  `iamount` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `income`
---
-
-INSERT INTO `income` (`Sn1`, `income`, `iamount`) VALUES
-(1, 'Salary', 45556);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mankirat-7048999414`
---
-
-CREATE TABLE `mankirat-7048999414` (
+CREATE TABLE `kush-9354752373` (
   `Trans Id` int(11) NOT NULL,
   `Category` varchar(10) NOT NULL,
+  `Source` varchar(20) NOT NULL,
   `Mode` varchar(20) NOT NULL,
   `Amount` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kush-9354752373`
+--
+
+INSERT INTO `kush-9354752373` (`Trans Id`, `Category`, `Source`, `Mode`, `Amount`) VALUES
+(15, 'Income', 'Gifts', 'Cash', 200),
+(16, 'Expense', 'Family', 'Cash', 200),
+(17, 'Expense', 'Bills', 'Debit Card', 1000),
+(18, 'Income', 'Salary', 'Cash', 3000);
 
 -- --------------------------------------------------------
 
@@ -92,28 +64,16 @@ CREATE TABLE `registration` (
 --
 
 INSERT INTO `registration` (`Id`, `name`, `contact`, `email`, `password`) VALUES
-(2, 'Mankirat', '7048999414', 'mankiratkaur1906@gmail.com', '123456');
+(8, 'Kush', '9354752373', 'skushdeep5@gmail.com', '123456');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `expense`
+-- Indexes for table `kush-9354752373`
 --
-ALTER TABLE `expense`
-  ADD PRIMARY KEY (`Sn2`);
-
---
--- Indexes for table `income`
---
-ALTER TABLE `income`
-  ADD PRIMARY KEY (`Sn1`);
-
---
--- Indexes for table `mankirat-7048999414`
---
-ALTER TABLE `mankirat-7048999414`
+ALTER TABLE `kush-9354752373`
   ADD PRIMARY KEY (`Trans Id`);
 
 --
@@ -127,22 +87,16 @@ ALTER TABLE `registration`
 --
 
 --
--- AUTO_INCREMENT for table `income`
+-- AUTO_INCREMENT for table `kush-9354752373`
 --
-ALTER TABLE `income`
-  MODIFY `Sn1` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `mankirat-7048999414`
---
-ALTER TABLE `mankirat-7048999414`
-  MODIFY `Trans Id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `kush-9354752373`
+  MODIFY `Trans Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
