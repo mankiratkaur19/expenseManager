@@ -41,12 +41,13 @@
 /* Set black background color, white text and some padding */
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    width: 100vw;
+    width: 100%;
     background-color: #555;
     color: white;
     padding: 15px;
+    font-size: 17px;
 }
 
 
@@ -72,7 +73,7 @@ footer {
 }
 
 .brand-name {
-    font-size: 35px;
+    font-size: 25px;
     font-weight: bold;
     color: #444;
     text-decoration: none;
@@ -193,4 +194,9 @@ body {
 
 .noTrans {
     display: flex;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
 }

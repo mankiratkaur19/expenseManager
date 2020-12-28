@@ -49,21 +49,18 @@ Every day Expense Manager System is intended to monitor Income-Expense of a pers
                     •	Create multiple accounts/budget <br>
                     •	Delete account<br>
                     •	Background color<br>
-                    •	Modify Transactions<br>
-                    •	Offline datastore<br>
-                    •	Passcode security<br>
-                    •	Fully customizable categories<br>
+                            •	Fully customizable categories<br>
 
                 </p>
-            </div>
-            <div class="col-sm-3 sidenav" style="background-color: lightyellow;">
+            </div><br><br>
+           <!-- <div class="col-sm-3 sidenav" style="background-color: lightyellow;">
                 <div class="well">
                     <p>
                         <img src="./images/img1.jpg">
                     </p>
                 </div>
                
-            </div>
+            </div>-->
         </div>
     </div>
     <?php include('./include/footer.php');?>

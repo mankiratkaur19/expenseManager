@@ -19,20 +19,20 @@ $filename = "login";
 
 <body>
 
-    <?php include ('../include/header.php');?>
+    <?php include('../include/header.php'); ?>
 
-    <div class="text-center" style="height: 75vh; display: flex; width: 100vw; background-color:lightsteelblue; font-size:20px";>
+    <div class="text-center" style="height: 75vh; display: flex; width: 100vw; background-color:lightsteelblue; font-size:20px; text-align:center;" >
         <div class="content" style="height: inherit;">
-            <div class="text-left form">
+            <div class="text-left form" style="float: center;text-align:center;">
 
-                <form action="login verify.php" method="post">
-                <h1 style="text-align: center;">Login to enter in your account!!</h1><br><br>
-                    <div class="form-group">
+                <form action="login verify.php" method="post" autocomplete="off" >
+                    <h1 style="text-align: center;">Login to enter in your account!!</h1><br><br>
+                    <div class="form-group" style="width: 70%;" style="float: center;text-align:center;">
                         <label for="name">Username:</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name" >
                     </div>
-                    
-                    <div class="form-group">
+
+                    <div class="form-group" style="width: 70%;" style="float: center;text-align:center;">
                         <label for="pwd">Password:</label>
                         <input type="password" class="form-control" id="pwd" name="password">
                     </div>
@@ -42,7 +42,7 @@ $filename = "login";
             </div>
         </div>
     </div>
-    <?php include('../include/footer.php');?>
+    <?php include('../include/footer.php'); ?>
 
 </body>
 
