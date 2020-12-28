@@ -8,7 +8,7 @@
                 </button>
                 <div class="image" style="margin-top: 11px;margin-left:20px;">
                     <img src="<?php if($filename!="homepage") echo ".";?>./images/logo.png" alt="" style="width: 60px; height: 50px;">
-                    <span class="brand-name" style="position: relative;top: 6px;margin-left: 15px;color: white;">
+                    <span class="brand-name" style="position: relative;top: 6px;margin-left: 15px;color: white; font-family: 'Montaga', serif;">
                         Expense Manager
                     </span>
                 </div>

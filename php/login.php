@@ -21,11 +21,12 @@ $filename = "login";
 
     <?php include ('../include/header.php');?>
 
-    <div class="text-center" style="height: 75vh; display: flex; width: 100vw;">
+    <div class="text-center" style="height: 75vh; display: flex; width: 100vw; background-color:lightsteelblue; font-size:20px";>
         <div class="content" style="height: inherit;">
             <div class="text-left form">
 
                 <form action="login verify.php" method="post">
+                <h1 style="text-align: center;">Login to enter in your account!!</h1><br><br>
                     <div class="form-group">
                         <label for="name">Username:</label>
                         <input type="text" class="form-control" id="name" name="name">

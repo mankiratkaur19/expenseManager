@@ -36,7 +36,8 @@
                     {
                 ?> 
                     <div class="noTrans">
-
+                          <div class="arrowImage"><img src="../images/arrow.png" alt=""></div>
+                          <div class="arrowMsg">Add your Income or Expense Transactions from here</div>
                     </div>
                 <?php
                     }

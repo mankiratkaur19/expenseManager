@@ -2,7 +2,7 @@
     session_start();
     $name = $_SESSION['name'];
     $num = $_SESSION['num'];
-    $filename = "expense";
+    $filename = "report";
     $tablename = $name."-".$num;
     include("../include/connection.php");
     $query_expense = mysqli_query($conn,"SELECT `Source`,`Amount` FROM `$tablename` WHERE `Category` = 'Expense'");
@@ -42,7 +42,7 @@
             <?php
                 while($resIn = mysqli_fetch_assoc($query_income))
                 {
-                    echo "['".$resIn['Source']."',".$resIn['Amount']."],";
+                    echo "['".$resIn['Source']."',".$resIn['Amount']."],"; // [sfsfAa , sasfqeg]
                 }    
             ?>
         ]);

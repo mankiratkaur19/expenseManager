@@ -23,9 +23,11 @@ $filename = "register";
 
     <div class="text-center" style="height: 75vh; display: flex; width: 100vw;">
         <div class="content" style="height: inherit;">
-            <div class="text-left form">
-
+       
+            <div class="text-left form" style="display: flex; background-color:lightsteelblue; font-size:20px";>
+      
                 <form action="register-verify.php" method="post">
+                <h1 style="text-align: center;">REGISTER YOURSELF!!</h1><br>
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" class="form-control" id="name" name="name">
@@ -46,9 +48,7 @@ $filename = "register";
                             <label><input type="checkbox"> Remember me</label>
                         </div>
                         <input type="submit" class="btn btn-primary" value="submit" name="submit">
-
-
-                        </form>
+</form>
             </div>
         </div>
     </div>
