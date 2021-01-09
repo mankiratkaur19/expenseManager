@@ -63,8 +63,15 @@
                             <input type="number" class="form-control" id="amount" name="amount">
                         </div>
 
-                        <input type="submit" class="btn btn-default" name="submit">
+                        <input type="submit" class="btn btn-default" name="submit" id="submit">
                     </form>
+                    <script>
+                        const subBtn = document.getElementById('submit');
+
+                        subBtn.addEventListener('click', () => {
+                            if(confirm("Are you sure? "))
+                            {
+                                alert("Submitted");
 
                     <?php
                        include('../include/connection.php');
@@ -78,6 +85,10 @@
                            $ins=mysqli_query($conn,$query);
                        }	
                        ?>
+                             
+                            }
+                        });
+                    </script>
 
                 </div>
             </div>

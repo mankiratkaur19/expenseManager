@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    $name = $_SESSION['name'];
-    $num = $_SESSION['num'];
-    $filename = "income";
-    $tablename = $name."-".$num;
+session_start();
+$name = $_SESSION['name'];
+$num = $_SESSION['num'];
+$filename = "income";
+$tablename = $name . "-" . $num;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,18 +16,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../style.css">
+    <script src="jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
 
-<?php include("../include/header.php") ?>
+    <?php include("../include/header.php") ?>
     <div class="text-center" style="height: 75vh; display: flex; width: 100vw;">
         <div class="content" style="height: inherit;">
-            <?php include('../include/sidenav.php');?>
+            <?php include('../include/sidenav.php'); ?>
 
             <div class="" style="background-color: lightgrey; width: 75vw; height: inherit;">
                 <div class="username">
-                    Hello <?php echo $name?>
+                    Hello <?php echo $name ?>
                 </div>
                 <div class="income form">
                     <form method="POST">
@@ -57,21 +58,32 @@
                             <input type="number" class="form-control" id="amount" name="amount">
                         </div>
 
-                        <input type="submit" class="btn btn-default" name="submit">
+                        <input type="submit" class="btn btn-default" name="submit" id="submit">
                     </form>
+                    <script>
+                        const subBtn = document.getElementById('submit');
 
-                    <?php
-                       include('../include/connection.php');
-                       if(isset($_POST['submit']))
-                       {
-                           $mode=$_POST['mode'];
-                           $source=$_POST['source'];
-                           $amount=$_POST['amount'];
-                                                      
-                           $query="INSERT INTO `$tablename` values(NULL,'Income','$source','$mode','$amount')";
-                           $ins=mysqli_query($conn,$query);
-                       }	
-                       ?>
+                        subBtn.addEventListener('click', () => {
+                            if(confirm("Are you sure? "))
+                            {
+                                alert("Submitted");
+                                <?php
+                                    include('../include/connection.php');
+                                    if (isset($_POST['submit'])) {
+
+
+                                        $mode = $_POST['mode'];
+                                        $source = $_POST['source'];
+                                        $amount = $_POST['amount'];
+
+                                        $query = "INSERT INTO `$tablename` values(NULL,'Income','$source','$mode','$amount')";
+                                        $ins = mysqli_query($conn, $query);
+                                    }
+                                ?>
+                            }
+                        });
+                    </script>
+
 
                 </div>
             </div>

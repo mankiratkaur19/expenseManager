@@ -1,11 +1,11 @@
 <?php
-    session_start();
-    $name = $_SESSION['name'];
-    $num = $_SESSION['num'];
-    $tablename = $name."-".$num;
-    $filename = "index";
-    include("../include/connection.php");
-    $query = mysqli_query($conn,"SELECT * FROM `$tablename`");
+session_start();
+$name = $_SESSION['name'];
+$num = $_SESSION['num'];
+$tablename = $name . "-" . $num;
+$filename = "index";
+include("../include/connection.php");
+$query = mysqli_query($conn, "SELECT * FROM `$tablename`");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,24 +25,21 @@
     <?php include("../include/header.php") ?>
     <div class="text-center" style="height: 75vh; display: flex; width: 100vw;">
         <div class="content" style="height: inherit;">
-            <?php include('../include/sidenav.php');?>
+            <?php include('../include/sidenav.php'); ?>
 
             <div class="" style="background-color: lightgrey; width: 75vw; height: inherit;">
                 <div class="username">
-                    Hello <?php echo $name?>
+                    Hello <?php echo $name ?>
                 </div>
                 <?php
-                    if(mysqli_num_rows($query) == 0)
-                    {
-                ?> 
+                if (mysqli_num_rows($query) == 0) {
+                ?>
                     <div class="noTrans">
-                          <div class="arrowImage"><img src="../images/arrow.png" alt=""></div>
-                          <div class="arrowMsg">Add your Income or Expense Transactions from here</div>
+                        <div class="arrowImage"><img src="../images/arrow.png" alt=""></div>
+                        <div class="arrowMsg">Add your Income or Expense Transactions from here</div>
                     </div>
                 <?php
-                    }
-                    else
-                    {
+                } else {
                 ?>
                     <div class="table">
                         <div class="transTable">
@@ -65,22 +62,22 @@
                                     </th>
                                 </tr>
                                 <?php
-                                    $i = 0;
-                                    while($result = mysqli_fetch_assoc($query)){
-                                        echo "<tr><td>".++$i."</td><td>".$result['Category']."</td><td>".$result['Source']."</td><td>".$result['Mode']."</td><td>".$result['Amount']."</td></tr>";
-                                    }
+                                $i = 0;
+                                while ($result = mysqli_fetch_assoc($query)) {
+                                    echo "<tr><td>" . ++$i . "</td><td>" . $result['Category'] . "</td><td>" . $result['Source'] . "</td><td>" . $result['Mode'] . "</td><td>" . $result['Amount'] . "</td></tr>";
+                                }
                                 ?>
                             </table>
                         </div>
                     </div>
                 <?php
-                    }
+                }
                 ?>
             </div>
         </div>
     </div>
 
-    <?php include('../include/footer.php');?>
+    <?php include('../include/footer.php'); ?>
 
 </body>
 

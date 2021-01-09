@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse" style="height: 15vh; margin: 0;">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -36,8 +36,8 @@
                         }
                     }
                 ?>
-                </ul>
+                </ul> 
             </div>
         </div>
 
-    </nav>
+    </nav> 
